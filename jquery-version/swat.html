@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-91874922-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/webico.ico">
+    <title> KF2 Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/theme.default.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar"><span class="sr-only">Toggle navigation</span></button>
+                <a class="navbar-brand" href="index.html">Killing Floor 2 Damage Calculator</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.reddit.com/r/killingfloor/">KF Subreddit</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1GDpg2mN1l_86U_RaDug0glFx8cZCuErwxZLiBKl9SyY/edit#gid=2068776317">Killing Floor 2 Stats Spreadsheet</a></li>
+                    <li><a href="hire.html">Hire Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="index.html">Overview </a></li>
+                    <li><a href="berserker.html">Berserker</a></li>
+                    <li><a href="commando.html">Commando</a></li>
+                    <li><a href="demolitionist.html">Demolitionist</a></li>
+                    <li><a href="fieldmedic.html">Field Medic</a></li>
+                    <li><a href="firebug.html">Firebug</a></li>
+                    <li><a href="gunslinger.html">Gunslinger</a></li>
+                    <li><a href="sharpshooter.html">Sharpshooter</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="survivalist.html">Survivalist</a></li>
+                    <li class="active"><a href="swat.html">SWAT<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div class="container-fluid">
+                    <h3 class="sub-header">Set Perk Level</h3>
+
+                    <div class="row">
+
+                        <div class="col-xs-6 col-sm-3 col-lg-2">
+                            <label>Perk Level <input type="number" class="equipCatValidation" id="perkLVL" name="perklevel" min="1" max="25" value="1"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="sub-header">Projectile Weapons</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Gun</th>
+                                <th>Base Damage</th>
+                                <th>Total Damage with Perks Applied</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-toggle="tooltip" data-placement="top" title="Ballistic_SMG">
+                                <td>MP7 SMG </td>
+                                <td>16</td>
+                                <td><span class="mp7"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Ballistic_SMG">
+                                <td>HMTech-201 SMG </td>
+                                <td>20</td>
+                                <td><span class="hmtsmg"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Ballistic_SMG">
+                                <td>MP5RAS SMG </td>
+                                <td>25</td>
+                                <td><span class="mp5"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Ballistic_SMG">
+                                <td>P90 SMG </td>
+                                <td>30</td>
+                                <td><span class="p90"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Ballistic_SMG">
+                                <td>Kriss SMG </td>
+                                <td>33</td>
+                                <td><span class="kris"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <label><input type = "button" class = "btn moreInfoButtonClass" value = "More Info"></label>
+                <div class="moreInfoDivClass">
+                    <ul>
+                        <li>SWAT's damage is rounded</li>
+                        <li>Amount of the damage per horizontal strike depend on the player-to-ZED angle. Horizontal strikes
+                            do no more than 75% and no less than 50% of the base damage value.</li>
+                    </ul>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <fieldset>
+                            <legend>Difficulty</legend>
+                            <label class="radio-inline">
+                        <input type="radio" name="difficulty" id="normaldiff" value="Normal" checked class = "rButton"> Normal
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="difficulty" id="harddiff" value="Hard" class = "rButton"> Hard
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="difficulty" id="suicidaldiff" value="Suicidal" class = "rButton"> Suicidal
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="difficulty" id="HOEdiff" value="HOE" class = "rButton"> HOE
+                    </label>
+                        </fieldset>
+                    </div>
+
+                    <div class="row">
+                        <fieldset>
+                            <legend>Choose Number of players</legend>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="1play" value="1play" checked class = "rButton"> 1
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="2play" value="2play" class = "rButton"> 2
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="3play" value="3play" class = "rButton"> 3
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="4play" value="4play" class = "rButton"> 4
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="5play" value="5play" class = "rButton"> 5
+                    </label>
+                            <label class="radio-inline">
+                        <input type="radio" name="numberofplayers" id="6play" value="6play" class = "rButton"> 6
+                    </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <h3 class="sub-header">ZEDS</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ZED</th>
+                                <th>Health</th>
+                                <th>Head Health</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-toggle="tooltip" data-placement="top" title="<div>
+                               Resistances <br> Slashing - x0.85<br> Bludgeon - x0.9 <br> Microwave - x0.25 <br> <br>
+                               Vulnerabilities <br> Ballistic_Submachinegun - x1.5 <br> Ballistic_AssaultRifle - x1.5 <br> Ballistic_Handgun - x1.01</div>">
+                                <td> Cyst</td>
+                                <td><span class="cysthp"></span></td>
+                                <td><span class="cystHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Rifle - x0.85<br> Slashing - x0.85 <br> Bludgeon - x0.9<br> Microwave - x0.25 <br><br>
+                                Vulnerabilities <br>Ballistic_Submachinegun - x1.5 <br> Ballistic_Handgun - x1.01 ">
+                                <td>Alpha Clot</td>
+                                <td><span class="alphahp"></span></td>
+                                <td><span class="alphaHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Rifle - x0.85<br> Slashing - x0.85 <br> Bludgeon - x0.9<br> Microwave - x0.25<br><br>
+                                Vulnerabilities <br> Ballistic_Submachinegun - x1.5 <br> Ballistic_Handgun - x1.01">
+                                <td>Slasher</td>
+                                <td><span class="slasherhp"></span></td>
+                                <td><span class="slasherHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Submachinegun - x0.35<br> Ballistic_AssaultRifle - x0.35 (Ballistic_AR15 - x0.4)<br> Ballistic_Shotgun - x0.25<br> Ballistic_Handgun - x0.35 (Ballistic_9mm - x0.65)<br> Ballistic_Rifle - x0.3<br> Slashing - x0.3<br> Bludgeon - x0.3<br> Microwave - x0.8<br> Explosive - x0.5<br> Piercing - x0.25<br> Toxic - x0.25">
+                                <td>Bloat</td>
+                                <td><span class="bloathp"></span></td>
+                                <td><span class="bloatHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Bludgeon - x0.9<br> Fire - x0.9<br> Microwave - x0.2 <br><br>
+                             Vulnerabilities <br> Ballistic_Submachinegun - x1.5 <br> Ballistic_AssaultRifle - x1.5">
+                                <td>Crawler</td>
+                                <td><span class="crawlerhp"></span></td>
+                                <td><span class="crawlerHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Slashing - x0.8<br> Bludgeon - x0.9<br> Fire - x0.85<br> Microwave - x0.85<br> Piercing - x0.75<br> Toxic - x0.75 <br><br> Vulnerabilities <br> Ballistic_AssaultRifle - x1.2 <br> Ballistic_Shotgun - x1.6 <br> Ballistic_Rifle - x1.25">
+                                <td>Gorefast</td>
+                                <td><span class="gorefasthp"></span></td>
+                                <td><span class="gorefastHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Slashing - x0.8<br> Bludgeon - x0.9<br> Fire - x0.85<br> Microwave - x0.85<br> Piercing - x0.75<br> Toxic - x0.75 <br><br> Vulnerabilities <br> Ballistic_AssaultRifle - x1.2 <br> Ballistic_Shotgun - x1.6 <br> Ballistic_Rifle - x1.25">
+                                <td>Gorefiend</td>
+                                <td><span class="gorefiendhp"></span></td>
+                                <td><span class="gorefiendHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Slashing - x0.8<br> Bludgeon - x0.9<br> Fire - x0.85<br> Microwave - x0.85<br> Piercing - x0.75<br> Toxic - x0.75 <br><br> Vulnerabilities <br> Ballistic_AssaultRifle - x1.5">
+                                <td>Stalker</td>
+                                <td><span class="stalkerhp"></span></td>
+                                <td><span class="stalkerHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Submachinegun - x0.75<br> Ballistic_AssaultRifle - x0.6<br> Ballistic_Handgun - x0.85 <br> Ballistic_Rifle - x0.7<br> Slashing - x0.75<br> Bludgeon - x0.85<br> Fire - x0.5<br> Explosive - x0.75<br> Piercing - x0.5<br> Toxic - x0.25 <br><br> Vulnerabilities <br> Microwave - x1.15">
+                                <td>Husk </td>
+                                <td><span class="huskhp"></span></td>
+                                <td><span class="huskHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Fire - x0.5<br> Microwave - x0.85<br> Explosive - x0.85<br> Piercing - x0.5<br> Toxic - x0.25">
+                                <td>Siren</td>
+                                <td><span class="sirenhp"></span></td>
+                                <td><span class="sirenHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Shotgun - x0.9<br> Ballistic_Handgun - x0.8<br> Fire - x0.3<br> Explosive - x0.4<br> Piercing - x0.75<br> Toxic - x0.25 <br><br> Vulnerabilities <br> Ballistic_RPG7Impact - x4">
+                                <td>Scrake</td>
+                                <td><span class="scrakehp"></span></td>
+                                <td><span class="scrakeHhp"></span></td>
+                            </tr>
+                            <tr data-toggle="tooltip" data-placement="top" title="Resistances <br>Ballistic_Submachinegun - x0.5<br> Ballistic_AssaultRifle - x0.5<br> Ballistic_Shotgun - x0.75<br> Ballistic_Handgun - x0.75<br> Ballistic_Rifle - x0.75<br> Slashing - x0.5<br> Bludgeon - x0.6<br> Fire - x0.3<br> Piercing - x0.75<br> Toxic - x0.25 <br><br> Vulnerabilities <br> Explosive - x1.5">
+                                <td>Fleshpound</td>
+                                <td><span class="fleshpoundhp"></span></td>
+                                <td><span class="fleshpoundHhp"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="button" class="btn moreInfoButtonZED" value="More Info">
+                <div class="moreInfoZedDiv">
+                    <h3>Applying Damage to ZED formula</h3>
+                    <ol>
+                        <li>Calculate damage in weapon-specific formula applies to melee weapon swing direction</li>
+                        <li> The damage is then rounded down based on the hitzone.</li>
+                        For example, if you shoot a Bloat's cleavers the formula would be NewDmg = (BaseWeaponDmg * .2) in most cases this causes
+                        a base damage reduction
+                        <li>ZED Vulnerability or Resistance to Damage types is then applied</li>
+                        <li>Check if ZED is blocking, and if so, adjust Damage value</li>
+                        <li>Perk damage values are applied at this step.</li>
+                        <li>Check for Field Medic Injection buff Damage = Roundup (Damage x Focus Injection Mod)</li>
+                        <li>Zed <a href="https://docs.google.com/spreadsheets/d/1GDpg2mN1l_86U_RaDug0glFx8cZCuErwxZLiBKl9SyY/edit#gid=2068776317&range=A122:B122">Decapitation </a>Decapitation
+                            <a href="https://docs.google.com/spreadsheets/d/1GDpg2mN1l_86U_RaDug0glFx8cZCuErwxZLiBKl9SyY/edit#gid=2068776317&range=A281:E281">check</a>                            is done</li>
+                    </ol>
+
+                    <strong>TLDR</strong>: Start with weapon base damage
+                    <ol>
+                        <li><strong>Skip</strong> if using a <strong>Ranged Weapon</strong></li>
+                        <li>Hitzone Modifier</li>
+                        <li>Apply dmg type resistances/weaknesses</li>
+                        <li><strong>Skip</strong> if ZED <strong>Isn't Blocking</strong></li>
+                        <li>Perks applied to base damage here</li>
+                        <li>Check if you have medic buff</li>
+                        <li>Checks for ZED head pop</li>
+                    </ol>
+
+                    Other Notes
+                    <ul>
+                        <li>Information above paraphrased from the spreadsheet at this
+                            <a href="https://docs.google.com/spreadsheets/d/1GDpg2mN1l_86U_RaDug0glFx8cZCuErwxZLiBKl9SyY/edit#gid=2068776317&range=A271:B271">section</a></li>
+                        <li>The damage type Resistances and Vulnerabilities are applied BEFORE perk bonuses (This can be very
+                            significant to the actual damage done)</li>
+                        <li>Slashing Damage Resistance does not apply to Class knives on cyst, Alpha Clot and Slasher</li>
+                        <li>Exact damage type for each weapon found on corresponding class pages</li>
+                        <li>If the ZED isn't Resistant or Vulnerable to a damage type, you can skip step 3 as the modifier is
+                            a neutral x 1.0 (nothing changes) </li>
+                        <li>Sirens and Bloats have no vulnerable Damage Types</li>
+                        <li>If the tooltip for each ZED does not list a damage type for Resistances or Vulnerabilities, it is
+                            neutral
+                        </li>
+                    </ul>
+
+                </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Main -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-0048982387602585"
+        data-ad-slot="8312549669"
+        data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+                </div>
+
+
+            <script src="scripts/main.js"></script>
+            <script src="scripts/swat.js"></script>
+            <script src="scripts/zedhp.js"></script>
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script>
+                window.jQuery || document.write('<script src=bootstrap/js/jquery.min.js><\/script>')
+            </script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
