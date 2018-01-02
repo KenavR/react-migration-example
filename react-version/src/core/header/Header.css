@@ -1,0 +1,41 @@
+/*
+Top navigation
+Hide default border to remove 1px line.
+*/
+.navbar-fixed-top {
+  border: 0;
+}
+
+/* Main Content */
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.highlight {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #f5f5f5;
+}
+.highlight > p {
+  padding-top: 0.5em;
+}
+.adsbygoogle {
+  margin-top: 3em;
+  text-align: center;
+}
+.moreInfoDivClass > ul {
+  margin: 0 0 1em 0;
+}
+.moreInfoButtonClass {
+  margin: 0 0 2em 0;
+}
+.moreInfoButtonClassZED {
+}
