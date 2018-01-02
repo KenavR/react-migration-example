@@ -103,7 +103,8 @@ export class BerserkerContainer extends Component {
     /* re-render only when calculations have changed */
 
     return (
-      this.state.calculatedWeaponDamage !== nextState.calculatedWeaponDamage
+      this.state.calculatedWeaponDamage !== nextState.calculatedWeaponDamage ||
+      this.state.calculatedHealth !== nextState.calculatedHealth
     );
   }
 
